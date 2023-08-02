@@ -1,0 +1,18 @@
+version: '3'
+services:
+  # python_app:
+  #   build: .
+  #   volumes:
+  #     - ./downloads:/home/seluser/Downloads
+  #   depends_on:
+  #     - selenium
+  selenium:
+    # image: seleniarm/standalone-chrome
+    image: seleniarm/standalone-chromium
+    # image: seleniarm/standalone-firefox
+    shm_size: 2gb
+    volumes:
+      - ./downloads:/home/seluser/Downloads
+    ports:
+      - "4444:4444"
+      - "7900:7900"
